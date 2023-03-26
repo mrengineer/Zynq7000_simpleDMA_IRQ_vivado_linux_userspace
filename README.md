@@ -40,3 +40,33 @@ sshpass -p root ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null 
 ```
 
 192.168.1.3 is board's IP. You should mae it constant in router. But normaly board will change MAC after and own key each reboot.
+
+Result of dataproc
+
+```bash
+root@my:~# /dataproc 
+- Opening a character device file of the Arty's DDR memeory...
+- Memory map the address of the DMA AXI IP via its AXI lite control interface register block.
+- Memory map the MM2S source address register block.
+- Memory map the S2MM destination address register block.
+- Writing random data to source register block...
+> Clearing the destination register block...
+> Source memory block data:      13 14 10 13 11 14 14 15 
+> Destination memory block data: 0 0 0 0 0 0 0 0 
+> Reset the DMA.
+> Halt the DMA.
+> Writing source address of the data from MM2S in DDR...
+> Writing the destination address for the data from S2MM in DDR...
+> Run the MM2S channel.
+> Run the S2MM channel.
+
+
+
+> Writing MM2S transfer length of 32 bytes...
+> Writing S2MM transfer length of 32 bytes...
+> Waiting for MM2S synchronization...
+> Waiting for S2MM sychronization...
+SRC DATA RD: 0d0e0a0d 0b0e0e0f
+DEST RESULT: 0d0e0a0d 0b0e0e0f
+
+```
