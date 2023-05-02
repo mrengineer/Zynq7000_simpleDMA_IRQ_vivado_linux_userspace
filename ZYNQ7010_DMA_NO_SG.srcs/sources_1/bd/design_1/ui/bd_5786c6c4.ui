@@ -1,0 +1,27 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.25",
+   "Default View_TopLeft":"-740,-206",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port S00_AXI -pg 1 -lvl 0 -x -10 -y 50 -defaultsOSRD
+preplace port M00_AXI -pg 1 -lvl 2 -x 250 -y 90 -defaultsOSRD
+preplace port port-id_ACLK -pg 1 -lvl 0 -x -10 -y 20 -defaultsOSRD
+preplace port port-id_ARESETN -pg 1 -lvl 0 -x -10 -y 150 -defaultsOSRD
+preplace port port-id_S00_ACLK -pg 1 -lvl 0 -x -10 -y 110 -defaultsOSRD
+preplace port port-id_S00_ARESETN -pg 1 -lvl 0 -x -10 -y 130 -defaultsOSRD
+preplace port port-id_M00_ACLK -pg 1 -lvl 0 -x -10 -y 70 -defaultsOSRD
+preplace port port-id_M00_ARESETN -pg 1 -lvl 0 -x -10 -y 90 -defaultsOSRD
+preplace inst s00_couplers -pg 1 -lvl 1 -x 120 -y 90 -defaultsOSRD
+preplace netloc axi_mem_intercon1_ACLK_net 1 0 1 NJ 70
+preplace netloc axi_mem_intercon1_ARESETN_net 1 0 1 NJ 90
+preplace netloc S00_ACLK_1 1 0 1 NJ 110
+preplace netloc S00_ARESETN_1 1 0 1 NJ 130
+preplace netloc axi_mem_intercon1_to_s00_couplers 1 0 1 NJ 50
+preplace netloc s00_couplers_to_axi_mem_intercon1 1 1 1 N 90
+levelinfo -pg 1 -10 120 250
+pagesize -pg 1 -db -bbox -sgen -170 -10 360 180
+"
+}
+

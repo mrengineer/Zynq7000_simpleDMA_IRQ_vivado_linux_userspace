@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sun Mar 26 15:27:57 2023
+# Process ID: 643670
+# Current directory: /home/bulkin
+# Command line: vivado
+# Log file: /home/bulkin/vivado.log
+# Journal file: /home/bulkin/vivado.jou
+# Running On: pc, OS: Linux, CPU Frequency: 4200.000 MHz, CPU Physical cores: 4, Host memory: 33549 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/bulkin/FPGA/TheDevice/ZYNQ7010_DMA_NO_SG.xpr
+update_compile_order -fileset sources_1
+archive_project /home/bulkin/FPGA/ZYNQ7010_DMA_NO_SG.xpr.zip -force -exclude_run_results -include_local_ip_cache

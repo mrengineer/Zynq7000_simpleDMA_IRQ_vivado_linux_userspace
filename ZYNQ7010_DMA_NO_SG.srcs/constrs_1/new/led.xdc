@@ -1,0 +1,10 @@
+
+#set_property IOSTANDARD LVCMOS33 [get_ports sys_rst_n_0]
+#set_property IOSTANDARD LVCMOS33 [get_ports sys_clk_0]
+set_property IOSTANDARD LVCMOS33 [get_ports led_1_0]
+#set_property PACKAGE_PIN H16 [get_ports sys_clk_0]
+#set_property PACKAGE_PIN U15 [get_ports sys_rst_n_0]
+set_property PACKAGE_PIN H17 [get_ports led_1_0]
+set_property SLEW SLOW [get_ports led_1_0]
+set_property OFFCHIP_TERM NONE [get_ports led_1_0]
+set_property DRIVE 12 [get_ports led_1_0]

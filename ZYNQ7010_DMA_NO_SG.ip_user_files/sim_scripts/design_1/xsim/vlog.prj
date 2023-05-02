@@ -1,0 +1,16 @@
+verilog xil_defaultlib --include "/home/bulkin/Xilinx/Vivado/2022.1/data/xilinx_vip/include" --include "../../../../led.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../led.gen/sources_1/bd/design_1/ipshared/5765/hdl" --include "../../../../led.gen/sources_1/bd/design_1/ipshared/8713/hdl" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_led_top_0_1/sim/design_1_led_top_0_1.v" \
+"../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+"../../../bd/design_1/ip/design_1_axi_protocol_convert_0_0/sim/design_1_axi_protocol_convert_0_0.v" \
+"../../../bd/design_1/ip/design_1_axis_data_fifo_0_0/sim/design_1_axis_data_fifo_0_0.v" \
+"../../../bd/design_1/ip/design_1_data_source_0_0/sim/design_1_data_source_0_0.v" \
+"../../../bd/design_1/ip/design_1_util_vector_logic_0_0/sim/design_1_util_vector_logic_0_0.v" \
+"../../../bd/design_1/sim/design_1.v" \
+"../../../bd/design_1/ip/design_1_auto_us_0/sim/design_1_auto_us_0.v" \
+"../../../bd/design_1/ip/design_1_auto_us_1/sim/design_1_auto_us_1.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

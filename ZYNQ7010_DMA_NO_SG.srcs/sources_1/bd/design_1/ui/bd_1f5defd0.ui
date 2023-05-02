@@ -1,0 +1,167 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Color Coded_ExpandedHierarchyInLayout":"",
+   "Color Coded_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1960 -y 150 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1960 -y 170 -defaultsOSRD
+preplace port port-id_sys_clk_0 -pg 1 -lvl 0 -x 0 -y 730 -defaultsOSRD
+preplace port port-id_sys_rst_n_0 -pg 1 -lvl 0 -x 0 -y 750 -defaultsOSRD
+preplace port port-id_led_1_0 -pg 1 -lvl 6 -x 1960 -y 740 -defaultsOSRD
+preplace inst PSys -pg 1 -lvl 5 -x 1700 -y 210 -defaultsOSRD
+preplace inst led_top_0 -pg 1 -lvl 5 -x 1700 -y 740 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 3 -x 940 -y 220 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 4 -x 1330 -y 200 -defaultsOSRD
+preplace inst axi_mem_intercon1 -pg 1 -lvl 2 -x 540 -y 120 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 36 37 35 39 34 38} -defaultsOSRD
+preplace inst axi_protocol_convert_0 -pg 1 -lvl 1 -x 190 -y 490 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 60 59} -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 2 -x 540 -y 560 -defaultsOSRD
+preplace inst c_counter_binary_1 -pg 1 -lvl 1 -x 190 -y 650 -defaultsOSRD
+preplace inst c_counter_binary_0 -pg 1 -lvl 1 -x 190 -y 820 -defaultsOSRD
+preplace netloc PSys_FCLK_RESET0_N 1 0 6 20 570 370 320 690 400 1180 350 NJ 350 1920
+preplace netloc led_top_0_led_1 1 5 1 NJ 740
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 30 720 350 260 700 410 1170 50 1480 90 1920
+preplace netloc sys_clk_0_1 1 0 5 NJ 730 NJ 730 NJ 730 NJ 730 NJ
+preplace netloc sys_rst_n_0_1 1 0 5 NJ 750 NJ 750 NJ 750 NJ 750 NJ
+preplace netloc c_counter_binary_1_Q 1 1 1 360 510n
+preplace netloc Net 1 0 2 40 580 390
+preplace netloc c_counter_binary_0_THRESH0 1 1 1 380 550n
+preplace netloc PSys_M_AXI_GP0 1 0 6 20 390 NJ 390 NJ 390 NJ 390 NJ 390 1930
+preplace netloc axi_dma_0_M_AXI_MM2S 1 3 1 N 110
+preplace netloc axi_dma_0_M_AXI_S2MM 1 3 1 N 130
+preplace netloc axi_mem_intercon1_M00_AXI 1 2 1 N 120
+preplace netloc axi_mem_intercon_M00_AXI 1 4 1 N 200
+preplace netloc axi_protocol_convert_0_M_AXI 1 1 1 340 60n
+preplace netloc processing_system7_0_DDR 1 5 1 NJ 150
+preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ 170
+preplace netloc axis_data_fifo_0_M_AXIS 1 2 1 710 140n
+levelinfo -pg 1 0 190 540 940 1330 1700 1960
+pagesize -pg 1 -db -bbox -sgen -140 0 2080 890
+",
+   "Color Coded_ScaleFactor":"1.0",
+   "Color Coded_TopLeft":"-131,196",
+   "Default View_ScaleFactor":"0.515294",
+   "Default View_TopLeft":"-12,0",
+   "ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_ScaleFactor":"1.1",
+   "Grouping and No Loops_TopLeft":"-235,0",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 7 -x 2300 -y 300 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 2300 -y 320 -defaultsOSRD
+preplace port port-id_led_1_0 -pg 1 -lvl 7 -x 2300 -y 820 -defaultsOSRD
+preplace inst PSys -pg 1 -lvl 6 -x 2050 -y 300 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 109 110 111 108 112 113} -defaultsOSRD -pinDir DDR right -pinY DDR 0R -pinDir FIXED_IO right -pinY FIXED_IO 20R -pinDir S_AXI_HP0_FIFO_CTRL right -pinY S_AXI_HP0_FIFO_CTRL 40R -pinDir M_AXI_GP0 left -pinY M_AXI_GP0 0L -pinDir S_AXI_HP0 left -pinY S_AXI_HP0 120L -pinDir M_AXI_GP0_ACLK left -pinY M_AXI_GP0_ACLK 380L -pinDir S_AXI_HP0_ACLK left -pinY S_AXI_HP0_ACLK 400L -pinDir FCLK_CLK0 left -pinY FCLK_CLK0 420L -pinDir FCLK_RESET0_N left -pinY FCLK_RESET0_N 360L -pinDir FCLK_RESET1_N right -pinY FCLK_RESET1_N 60R -pinDir FCLK_RESET2_N right -pinY FCLK_RESET2_N 80R
+preplace inst led_top_0 -pg 1 -lvl 6 -x 2050 -y 820 -swap {1 0 2} -defaultsOSRD -pinDir sys_clk left -pinY sys_clk 20L -pinDir sys_rst_n left -pinY sys_rst_n 0L -pinDir led_1 right -pinY led_1 0R
+preplace inst axi_dma_0 -pg 1 -lvl 4 -x 1320 -y 360 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 61 62 63 60 64 65 66 67} -defaultsOSRD -pinDir S_AXI_LITE left -pinY S_AXI_LITE 0L -pinDir M_AXI_MM2S right -pinY M_AXI_MM2S 60R -pinDir M_AXI_S2MM right -pinY M_AXI_S2MM 80R -pinDir M_AXIS_MM2S right -pinY M_AXIS_MM2S 100R -pinDir S_AXIS_S2MM left -pinY S_AXIS_S2MM 140L -pinDir s_axi_lite_aclk left -pinY s_axi_lite_aclk 180L -pinDir m_axi_mm2s_aclk left -pinY m_axi_mm2s_aclk 200L -pinDir m_axi_s2mm_aclk left -pinY m_axi_s2mm_aclk 220L -pinDir axi_resetn left -pinY axi_resetn 160L -pinDir mm2s_prmry_reset_out_n right -pinY mm2s_prmry_reset_out_n 120R -pinDir s2mm_prmry_reset_out_n right -pinY s2mm_prmry_reset_out_n 140R -pinDir mm2s_introut right -pinY mm2s_introut 160R -pinDir s2mm_introut right -pinY s2mm_introut 180R
+preplace inst axi_mem_intercon -pg 1 -lvl 5 -x 1670 -y 420 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 69 66 70 67 71 68 72} -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 0L -pinDir S01_AXI left -pinY S01_AXI 20L -pinDir M00_AXI right -pinY M00_AXI 0R -pinDir ACLK left -pinY ACLK 40L -pinDir ARESETN left -pinY ARESETN 120L -pinDir S00_ACLK left -pinY S00_ACLK 60L -pinDir S00_ARESETN left -pinY S00_ARESETN 140L -pinDir S01_ACLK left -pinY S01_ACLK 80L -pinDir S01_ARESETN left -pinY S01_ARESETN 160L -pinDir M00_ACLK left -pinY M00_ACLK 100L -pinDir M00_ARESETN left -pinY M00_ARESETN 180L
+preplace inst axi_mem_intercon1 -pg 1 -lvl 3 -x 970 -y 120 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 37 34 38 35 39 36} -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 0L -pinDir M00_AXI right -pinY M00_AXI 120R -pinDir ACLK left -pinY ACLK 80L -pinDir ARESETN left -pinY ARESETN 20L -pinDir S00_ACLK left -pinY S00_ACLK 100L -pinDir S00_ARESETN left -pinY S00_ARESETN 40L -pinDir M00_ACLK left -pinY M00_ACLK 120L -pinDir M00_ARESETN left -pinY M00_ARESETN 60L
+preplace inst axi_protocol_convert_0 -pg 1 -lvl 2 -x 570 -y 70 -swap {39 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 0 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60} -defaultsOSRD -pinDir S_AXI right -pinY S_AXI 180R -pinDir M_AXI right -pinY M_AXI 0R -pinDir aclk left -pinY aclk 160L -pinDir aresetn left -pinY aresetn 180L
+preplace inst axis_data_fifo_0 -pg 1 -lvl 3 -x 970 -y 500 -defaultsOSRD -pinDir S_AXIS left -pinY S_AXIS 0L -pinDir M_AXIS right -pinY M_AXIS 0R -pinDir s_axis_aresetn left -pinY s_axis_aresetn 20L -pinDir s_axis_aclk left -pinY s_axis_aclk 40L
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 180 -y 60 -swap {7 0 2 3 4 1 6 8 5 9} -defaultsOSRD -pinDir slowest_sync_clk right -pinY slowest_sync_clk 300R -pinDir ext_reset_in right -pinY ext_reset_in 0R -pinDir aux_reset_in left -pinY aux_reset_in 0L -pinDir mb_debug_sys_rst left -pinY mb_debug_sys_rst 20L -pinDir dcm_locked left -pinY dcm_locked 40L -pinDir mb_reset right -pinY mb_reset 220R -pinBusDir bus_struct_reset right -pinBusY bus_struct_reset 260R -pinBusDir peripheral_reset right -pinBusY peripheral_reset 320R -pinBusDir interconnect_aresetn right -pinBusY interconnect_aresetn 240R -pinBusDir peripheral_aresetn right -pinBusY peripheral_aresetn 340R
+preplace inst invert -pg 1 -lvl 3 -x 970 -y 380 -defaultsOSRD -pinBusDir Op1 left -pinBusY Op1 0L -pinBusDir Res right -pinBusY Res 0R
+preplace inst data_source_0 -pg 1 -lvl 2 -x 570 -y 510 -defaultsOSRD -pinDir m_axis right -pinY m_axis 0R -pinDir aclk left -pinY aclk 0L -pinDir areset left -pinY areset 20L
+preplace netloc PSys_FCLK_RESET0_N 1 1 5 400J 10 800 440 1120J 660 N 660 N
+preplace netloc invert_Res 1 3 1 1140 380n
+preplace netloc led_top_0_led_1 1 6 1 NJ 820
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 4 360J 310 740 680 NJ 680 1520J
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 5 400 820 NJ 820 NJ 820 NJ 820 N
+preplace netloc proc_sys_reset_0_peripheral_reset 1 1 2 360J 430 760J
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 5 380 450 780 840 1140 640 1500 840 1820
+preplace netloc PSys_M_AXI_GP0 1 2 4 760J 300 NJ 300 NJ 300 N
+preplace netloc axi_dma_0_M_AXI_MM2S 1 4 1 N 420
+preplace netloc axi_dma_0_M_AXI_S2MM 1 4 1 N 440
+preplace netloc axi_mem_intercon1_M00_AXI 1 3 1 1140 240n
+preplace netloc axi_mem_intercon_M00_AXI 1 5 1 N 420
+preplace netloc axi_protocol_convert_0_M_AXI 1 2 1 820 70n
+preplace netloc axis_data_fifo_0_M_AXIS 1 3 1 N 500
+preplace netloc data_source_0_m_axis 1 2 1 720 500n
+preplace netloc processing_system7_0_DDR 1 6 1 NJ 300
+preplace netloc processing_system7_0_FIXED_IO 1 6 1 NJ 320
+levelinfo -pg 1 0 180 570 970 1320 1670 2050 2300
+pagesize -pg 1 -db -bbox -sgen 0 0 2420 900
+",
+   "No Loops_ScaleFactor":"0.848889",
+   "No Loops_TopLeft":"265,0",
+   "Reduced Jogs_ExpandedHierarchyInLayout":"",
+   "Reduced Jogs_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1980 -y 380 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1980 -y 400 -defaultsOSRD
+preplace port port-id_sys_clk_0 -pg 1 -lvl 0 -x 0 -y 660 -defaultsOSRD
+preplace port port-id_sys_rst_n_0 -pg 1 -lvl 0 -x 0 -y 700 -defaultsOSRD
+preplace port port-id_led_1_0 -pg 1 -lvl 6 -x 1980 -y 620 -defaultsOSRD
+preplace inst PSys -pg 1 -lvl 5 -x 1720 -y 360 -swap {16 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 30 17 18 19 20 21 22 69 24 25 26 27 28 29 0 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 23 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 113 112 110 111} -defaultsOSRD -pinY DDR 20R -pinY FIXED_IO 40R -pinY S_AXI_HP0_FIFO_CTRL 20L -pinY M_AXI_GP0 0R -pinY S_AXI_HP0 0L -pinY M_AXI_GP0_ACLK 40L -pinY S_AXI_HP0_ACLK 60L -pinY FCLK_CLK0 120R -pinY FCLK_RESET0_N 100R -pinY FCLK_RESET1_N 60R -pinY FCLK_RESET2_N 80R
+preplace inst led_top_0 -pg 1 -lvl 5 -x 1720 -y 620 -defaultsOSRD -pinY sys_clk 0L -pinY sys_rst_n 80L -pinY led_1 0R
+preplace inst axi_dma_0 -pg 1 -lvl 3 -x 920 -y 420 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 61 62 63 60 64 65 66 67} -defaultsOSRD -pinY S_AXI_LITE 0L -pinY M_AXI_MM2S 0R -pinY M_AXI_S2MM 20R -pinY M_AXIS_MM2S 40R -pinY S_AXIS_S2MM 40L -pinY s_axi_lite_aclk 80L -pinY m_axi_mm2s_aclk 100L -pinY m_axi_s2mm_aclk 120L -pinY axi_resetn 60L -pinY mm2s_prmry_reset_out_n 60R -pinY s2mm_prmry_reset_out_n 80R -pinY mm2s_introut 100R -pinY s2mm_introut 120R
+preplace inst axi_mem_intercon -pg 1 -lvl 4 -x 1330 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 80 76 81 77 82 78 83 79} -defaultsOSRD -pinY S00_AXI 0L -pinY S01_AXI 20L -pinY M00_AXI 180R -pinY ACLK 120L -pinY ARESETN 40L -pinY S00_ACLK 140L -pinY S00_ARESETN 60L -pinY S01_ACLK 160L -pinY S01_ARESETN 80L -pinY M00_ACLK 180L -pinY M00_ARESETN 100L
+preplace inst axi_mem_intercon1 -pg 1 -lvl 2 -x 530 -y 120 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 37 34 38 35 39 36} -defaultsOSRD -pinY S00_AXI 0L -pinY M00_AXI 120R -pinY ACLK 80L -pinY ARESETN 20L -pinY S00_ACLK 100L -pinY S00_ARESETN 40L -pinY M00_ACLK 120L -pinY M00_ARESETN 60L
+preplace inst axi_protocol_convert_0 -pg 1 -lvl 1 -x 190 -y 360 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 60 59} -defaultsOSRD -pinY S_AXI 0L -pinY M_AXI 0R -pinY aclk 40L -pinY aresetn 20L
+preplace inst axis_data_fifo_0 -pg 1 -lvl 2 -x 530 -y 460 -defaultsOSRD -pinY S_AXIS 80L -pinY M_AXIS 0R -pinY s_axis_aresetn 100L -pinY s_axis_aclk 120L
+preplace inst data_source_0 -pg 1 -lvl 1 -x 190 -y 540 -defaultsOSRD -pinY m_axis 0R -pinY clk 0L -pinY areset 20L
+preplace netloc PSys_FCLK_RESET0_N 1 0 6 20 460 360 640 700 340 1180 560 NJ 560 1960
+preplace netloc led_top_0_led_1 1 5 1 NJ 620
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 40 480 380 680 740 360 1160 360 1480 540 1940
+preplace netloc sys_clk_0_1 1 0 5 NJ 660 NJ 660 680J 320 1120J 620 NJ
+preplace netloc sys_rst_n_0_1 1 0 5 NJ 700 NJ 700 NJ 700 NJ 700 NJ
+preplace netloc PSys_M_AXI_GP0 1 0 6 20 300 NJ 300 NJ 300 NJ 300 NJ 300 1960
+preplace netloc axi_dma_0_M_AXI_MM2S 1 3 1 1100 60n
+preplace netloc axi_dma_0_M_AXI_S2MM 1 3 1 1140 80n
+preplace netloc axi_mem_intercon1_M00_AXI 1 2 1 720 240n
+preplace netloc axi_mem_intercon_M00_AXI 1 4 1 1500 240n
+preplace netloc axi_protocol_convert_0_M_AXI 1 1 1 340 120n
+preplace netloc axis_data_fifo_0_M_AXIS 1 2 1 N 460
+preplace netloc processing_system7_0_DDR 1 5 1 NJ 380
+preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ 400
+preplace netloc data_source_0_m_axis 1 1 1 N 540
+levelinfo -pg 1 0 190 530 920 1330 1720 1980
+pagesize -pg 1 -db -bbox -sgen -140 0 2100 760
+",
+   "Reduced Jogs_ScaleFactor":"0.730337",
+   "Reduced Jogs_TopLeft":"-131,-34",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 7 -x 2320 -y 270 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 2320 -y 290 -defaultsOSRD
+preplace port port-id_led_1_0 -pg 1 -lvl 7 -x 2320 -y 780 -defaultsOSRD
+preplace inst PSys -pg 1 -lvl 6 -x 2060 -y 330 -defaultsOSRD
+preplace inst led_top_0 -pg 1 -lvl 6 -x 2060 -y 780 -swap {1 0 2} -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 4 -x 1280 -y 320 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 61 62 63 60 64 65 66 67} -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 5 -x 1670 -y 620 -defaultsOSRD
+preplace inst axi_mem_intercon1 -pg 1 -lvl 3 -x 920 -y 340 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 37 34 38 35 39 36} -defaultsOSRD
+preplace inst axi_protocol_convert_0 -pg 1 -lvl 2 -x 570 -y 560 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 210 -y 320 -defaultsOSRD
+preplace inst invert -pg 1 -lvl 2 -x 570 -y 150 -defaultsOSRD -resize 206 88
+preplace inst xlconcat_0 -pg 1 -lvl 5 -x 1670 -y 370 -defaultsOSRD
+preplace inst my_0 -pg 1 -lvl 3 -x 920 -y 110 -defaultsOSRD
+preplace inst system_ila_0 -pg 1 -lvl 4 -x 1280 -y 110 -defaultsOSRD
+preplace netloc PSys_FCLK_RESET0_N 1 0 7 30 470 NJ 470 NJ 470 NJ 470 NJ 470 1830J 480 2280
+preplace netloc axi_dma_0_mm2s_introut 1 4 1 N 360
+preplace netloc axi_dma_0_s2mm_introut 1 4 1 N 380
+preplace netloc invert_Res 1 2 2 720 210 1100J
+preplace netloc led_top_0_led_1 1 6 1 NJ 780
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 4 NJ 340 720 590 NJ 590 NJ
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 5 390 360 730 600 NJ 600 1460 770 NJ
+preplace netloc proc_sys_reset_0_peripheral_reset 1 1 1 390 150n
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 7 20 420 400 400 740 10 1080 440 1480 440 1840 470 2290
+preplace netloc xlconcat_0_dout 1 5 1 N 370
+preplace netloc PSys_M_AXI_GP0 1 1 6 410 460 NJ 460 NJ 460 NJ 460 NJ 460 2300
+preplace netloc axi_dma_0_M_AXI_MM2S 1 4 1 1490 260n
+preplace netloc axi_dma_0_M_AXI_S2MM 1 4 1 1470 280n
+preplace netloc axi_mem_intercon1_M00_AXI 1 3 1 1090 270n
+preplace netloc axi_mem_intercon_M00_AXI 1 5 1 1820 310n
+preplace netloc axi_protocol_convert_0_M_AXI 1 2 1 750 280n
+preplace netloc processing_system7_0_DDR 1 6 1 NJ 270
+preplace netloc processing_system7_0_FIXED_IO 1 6 1 NJ 290
+preplace netloc my_0_m_axis 1 3 1 1070 90n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 3 760 480 NJ 480 1460
+levelinfo -pg 1 0 210 570 920 1280 1670 2060 2320
+pagesize -pg 1 -db -bbox -sgen 0 -50 2440 1340
+"
+}
+{
+   "da_axi4_cnt":"4",
+   "da_board_cnt":"2",
+   "da_bram_cntlr_cnt":"2",
+   "da_clkrst_cnt":"5",
+   "da_ps7_cnt":"1"
+}
