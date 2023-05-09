@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
--- Date        : Mon May  1 21:57:27 2023
+-- Date        : Thu May  4 22:49:49 2023
 -- Host        : pc running 64-bit Ubuntu 20.04.6 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/bulkin/FPGA/TheDevice/ZYNQ7010_DMA_NO_SG.gen/sources_1/bd/design_1/ip/design_1_led_top_0_1/design_1_led_top_0_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_led_top_0_1 -prefix
+--               design_1_led_top_0_1_ design_1_led_top_0_1_sim_netlist.vhdl
 -- Design      : design_1_led_top_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -23,9 +23,7 @@ entity design_1_led_top_0_1_led_top is
   attribute DLY_CNT : integer;
   attribute DLY_CNT of design_1_led_top_0_1_led_top : entity is 50000000;
   attribute HALF_DLY_CNT : integer;
-  attribute HALF_DLY_CNT of design_1_led_top_0_1_led_top : entity is 8388608;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_led_top_0_1_led_top : entity is "led_top";
+  attribute HALF_DLY_CNT of design_1_led_top_0_1_led_top : entity is 5242880;
   attribute keep_hierarchy : string;
   attribute keep_hierarchy of design_1_led_top_0_1_led_top : entity is "soft";
 end design_1_led_top_0_1_led_top;
@@ -35,6 +33,7 @@ architecture STRUCTURE of design_1_led_top_0_1_led_top is
   attribute MARK_DEBUG : boolean;
   attribute MARK_DEBUG of count : signal is std.standard.true;
   signal \count[31]_i_10_n_0\ : STD_LOGIC;
+  signal \count[31]_i_11_n_0\ : STD_LOGIC;
   signal \count[31]_i_2_n_0\ : STD_LOGIC;
   signal \count[31]_i_3_n_0\ : STD_LOGIC;
   signal \count[31]_i_4_n_0\ : STD_LOGIC;
@@ -77,7 +76,6 @@ architecture STRUCTURE of design_1_led_top_0_1_led_top is
   signal \p_0_in__0\ : STD_LOGIC;
   signal r_led : STD_LOGIC;
   attribute MARK_DEBUG of r_led : signal is std.standard.true;
-  signal r_led_i_2_n_0 : STD_LOGIC;
   signal \NLW_count_reg[31]_i_7_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_count_reg[31]_i_7_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute KEEP : string;
@@ -451,6 +449,17 @@ begin
     );
 \count[31]_i_10\: unisim.vcomponents.LUT4
     generic map(
+      INIT => X"FFFE"
+    )
+        port map (
+      I0 => count(27),
+      I1 => count(26),
+      I2 => count(29),
+      I3 => count(28),
+      O => \count[31]_i_10_n_0\
+    );
+\count[31]_i_11\: unisim.vcomponents.LUT4
+    generic map(
       INIT => X"7FFF"
     )
         port map (
@@ -458,7 +467,7 @@ begin
       I1 => count(21),
       I2 => count(25),
       I3 => count(23),
-      O => \count[31]_i_10_n_0\
+      O => \count[31]_i_11_n_0\
     );
 \count[31]_i_2\: unisim.vcomponents.LUT1
     generic map(
@@ -497,7 +506,7 @@ begin
       INIT => X"FFFE"
     )
         port map (
-      I0 => r_led_i_2_n_0,
+      I0 => \count[31]_i_10_n_0\,
       I1 => count(24),
       I2 => count(30),
       I3 => count(31),
@@ -512,7 +521,7 @@ begin
       I1 => count(20),
       I2 => count(18),
       I3 => count(17),
-      I4 => \count[31]_i_10_n_0\,
+      I4 => \count[31]_i_11_n_0\,
       O => \count[31]_i_6_n_0\
     );
 \count[31]_i_8\: unisim.vcomponents.LUT4
@@ -983,27 +992,16 @@ begin
     );
 r_led_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000000000001"
+      INIT => X"000000000000001F"
     )
         port map (
-      I0 => count(25),
-      I1 => count(23),
-      I2 => count(31),
-      I3 => count(30),
-      I4 => count(24),
-      I5 => r_led_i_2_n_0,
+      I0 => count(21),
+      I1 => count(20),
+      I2 => count(22),
+      I3 => count(23),
+      I4 => count(25),
+      I5 => \count[31]_i_5_n_0\,
       O => \p_0_in__0\
-    );
-r_led_i_2: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FFFE"
-    )
-        port map (
-      I0 => count(27),
-      I1 => count(26),
-      I2 => count(29),
-      I3 => count(28),
-      O => r_led_i_2_n_0
     );
 r_led_reg: unisim.vcomponents.FDCE
      port map (
@@ -1040,13 +1038,13 @@ architecture STRUCTURE of design_1_led_top_0_1 is
   attribute DLY_CNT : integer;
   attribute DLY_CNT of inst : label is 50000000;
   attribute HALF_DLY_CNT : integer;
-  attribute HALF_DLY_CNT of inst : label is 8388608;
+  attribute HALF_DLY_CNT of inst : label is 5242880;
   attribute KEEP_HIERARCHY : string;
   attribute KEEP_HIERARCHY of inst : label is "soft";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of sys_clk : signal is "xilinx.com:signal:clock:1.0 sys_clk CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of sys_clk : signal is "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0";
+  attribute X_INTERFACE_PARAMETER of sys_clk : signal is "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 99999985, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0";
   attribute X_INTERFACE_INFO of sys_rst_n : signal is "xilinx.com:signal:reset:1.0 sys_rst_n RST";
   attribute X_INTERFACE_PARAMETER of sys_rst_n : signal is "XIL_INTERFACENAME sys_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
 begin

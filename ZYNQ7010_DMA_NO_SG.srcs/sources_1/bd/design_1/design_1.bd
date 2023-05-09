@@ -33,8 +33,8 @@
       "proc_sys_reset_0": "",
       "invert": "",
       "xlconcat_0": "",
-      "my_0": "",
-      "system_ila_0": ""
+      "system_ila_0": "",
+      "my_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -708,7 +708,7 @@
         "inst_hier_path": "led_top_0",
         "parameters": {
           "HALF_DLY_CNT": {
-            "value": "0x00800000"
+            "value": "0x00500000"
           }
         },
         "reference_info": {
@@ -1552,6 +1552,33 @@
         "xci_path": "ip/design_1_xlconcat_0_0/design_1_xlconcat_0_0.xci",
         "inst_hier_path": "xlconcat_0"
       },
+      "system_ila_0": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "design_1_system_ila_0_1",
+        "xci_path": "ip/design_1_system_ila_0_1/design_1_system_ila_0_1.xci",
+        "inst_hier_path": "system_ila_0",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "4096"
+          },
+          "C_MON_TYPE": {
+            "value": "MIX"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "3"
+          },
+          "C_SLOT_0_INTF_TYPE": {
+            "value": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        },
+        "interface_ports": {
+          "SLOT_0_AXIS": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        }
+      },
       "my_0": {
         "vlnv": "xilinx.com:module_ref:my:1.0",
         "xci_name": "design_1_my_0_0",
@@ -1794,27 +1821,17 @@
                 "value_src": "default_prop"
               }
             }
-          }
-        }
-      },
-      "system_ila_0": {
-        "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "design_1_system_ila_0_1",
-        "xci_path": "ip/design_1_system_ila_0_1/design_1_system_ila_0_1.xci",
-        "inst_hier_path": "system_ila_0",
-        "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "32768"
           },
-          "C_SLOT_0_INTF_TYPE": {
-            "value": "xilinx.com:interface:axis_rtl:1.0"
-          }
-        },
-        "interface_ports": {
-          "SLOT_0_AXIS": {
-            "mode": "Monitor",
-            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
-            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          "d_last": {
+            "direction": "O"
+          },
+          "d_cnt": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "d_valid": {
+            "direction": "O"
           }
         }
       }
@@ -1905,14 +1922,32 @@
         "ports": [
           "invert/Res",
           "axi_dma_0/axi_resetn",
-          "my_0/sys_rst_n",
-          "system_ila_0/resetn"
+          "system_ila_0/resetn",
+          "my_0/sys_rst_n"
         ]
       },
       "led_top_0_led_1": {
         "ports": [
           "led_top_0/led_1",
           "led_1_0"
+        ]
+      },
+      "my_0_d_cnt": {
+        "ports": [
+          "my_0/d_cnt",
+          "system_ila_0/probe1"
+        ]
+      },
+      "my_0_d_last": {
+        "ports": [
+          "my_0/d_last",
+          "system_ila_0/probe0"
+        ]
+      },
+      "my_0_d_valid": {
+        "ports": [
+          "my_0/d_valid",
+          "system_ila_0/probe2"
         ]
       },
       "proc_sys_reset_0_interconnect_aresetn": {
@@ -1958,10 +1993,10 @@
           "axi_mem_intercon/S01_ACLK",
           "led_top_0/sys_clk",
           "proc_sys_reset_0/slowest_sync_clk",
+          "system_ila_0/clk",
           "my_0/sys_clk",
           "my_0/s_axis_aclk",
-          "my_0/m_axis_aclk",
-          "system_ila_0/clk"
+          "my_0/m_axis_aclk"
         ]
       },
       "xlconcat_0_dout": {

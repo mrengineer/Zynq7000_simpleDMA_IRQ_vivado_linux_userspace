@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
--- Date        : Tue May  2 00:00:26 2023
+-- Date        : Tue May  2 00:00:25 2023
 -- Host        : pc running 64-bit Ubuntu 20.04.6 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/bulkin/FPGA/TheDevice/ZYNQ7010_DMA_NO_SG.gen/sources_1/bd/design_1/ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_axi_dma_0_1 -prefix
+--               design_1_axi_dma_0_1_ design_1_axi_dma_0_1_stub.vhdl
 -- Design      : design_1_axi_dma_0_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

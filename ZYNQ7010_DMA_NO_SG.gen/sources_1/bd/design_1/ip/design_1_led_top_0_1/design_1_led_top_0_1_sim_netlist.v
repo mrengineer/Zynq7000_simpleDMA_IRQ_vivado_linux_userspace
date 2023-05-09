@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Mon May  1 21:57:27 2023
+// Date        : Thu May  4 22:49:49 2023
 // Host        : pc running 64-bit Ubuntu 20.04.6 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/bulkin/FPGA/TheDevice/ZYNQ7010_DMA_NO_SG.gen/sources_1/bd/design_1/ip/design_1_led_top_0_1/design_1_led_top_0_1_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_led_top_0_1 -prefix
+//               design_1_led_top_0_1_ design_1_led_top_0_1_sim_netlist.v
 // Design      : design_1_led_top_0_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,7 +19,7 @@ module design_1_led_top_0_1
    (sys_clk,
     sys_rst_n,
     led_1);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 sys_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0" *) input sys_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 sys_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 99999985, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0" *) input sys_clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 sys_rst_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input sys_rst_n;
   output led_1;
 
@@ -28,7 +28,7 @@ module design_1_led_top_0_1
   wire sys_rst_n;
 
   (* DLY_CNT = "50000000" *) 
-  (* HALF_DLY_CNT = "8388608" *) 
+  (* HALF_DLY_CNT = "5242880" *) 
   (* KEEP_HIERARCHY = "soft" *) 
   design_1_led_top_0_1_led_top inst
        (.led_1(led_1),
@@ -36,8 +36,7 @@ module design_1_led_top_0_1
         .sys_rst_n(sys_rst_n));
 endmodule
 
-(* DLY_CNT = "50000000" *) (* HALF_DLY_CNT = "8388608" *) (* ORIG_REF_NAME = "led_top" *) 
-(* keep_hierarchy = "soft" *) 
+(* DLY_CNT = "50000000" *) (* HALF_DLY_CNT = "5242880" *) (* keep_hierarchy = "soft" *) 
 module design_1_led_top_0_1_led_top
    (sys_clk,
     sys_rst_n,
@@ -48,6 +47,7 @@ module design_1_led_top_0_1_led_top
 
   (* MARK_DEBUG *) wire [31:0]count;
   wire \count[31]_i_10_n_0 ;
+  wire \count[31]_i_11_n_0 ;
   wire \count[31]_i_2_n_0 ;
   wire \count[31]_i_3_n_0 ;
   wire \count[31]_i_4_n_0 ;
@@ -89,7 +89,6 @@ module design_1_led_top_0_1_led_top
   wire [31:1]data0;
   wire p_0_in__0;
   (* MARK_DEBUG *) wire r_led;
-  wire r_led_i_2_n_0;
   wire sys_clk;
   wire sys_rst_n;
   wire [3:2]\NLW_count_reg[31]_i_7_CO_UNCONNECTED ;
@@ -346,13 +345,21 @@ module design_1_led_top_0_1_led_top
         .I5(data0[31]),
         .O(count__0[31]));
   LUT4 #(
-    .INIT(16'h7FFF)) 
+    .INIT(16'hFFFE)) 
     \count[31]_i_10 
+       (.I0(count[27]),
+        .I1(count[26]),
+        .I2(count[29]),
+        .I3(count[28]),
+        .O(\count[31]_i_10_n_0 ));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \count[31]_i_11 
        (.I0(count[22]),
         .I1(count[21]),
         .I2(count[25]),
         .I3(count[23]),
-        .O(\count[31]_i_10_n_0 ));
+        .O(\count[31]_i_11_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \count[31]_i_2 
@@ -379,7 +386,7 @@ module design_1_led_top_0_1_led_top
   LUT4 #(
     .INIT(16'hFFFE)) 
     \count[31]_i_5 
-       (.I0(r_led_i_2_n_0),
+       (.I0(\count[31]_i_10_n_0 ),
         .I1(count[24]),
         .I2(count[30]),
         .I3(count[31]),
@@ -391,7 +398,7 @@ module design_1_led_top_0_1_led_top
         .I1(count[20]),
         .I2(count[18]),
         .I3(count[17]),
-        .I4(\count[31]_i_10_n_0 ),
+        .I4(\count[31]_i_11_n_0 ),
         .O(\count[31]_i_6_n_0 ));
   LUT4 #(
     .INIT(16'hFF7F)) 
@@ -768,23 +775,15 @@ module design_1_led_top_0_1_led_top
         .D(count__0[9]),
         .Q(count[9]));
   LUT6 #(
-    .INIT(64'h0000000000000001)) 
+    .INIT(64'h000000000000001F)) 
     r_led_i_1
-       (.I0(count[25]),
-        .I1(count[23]),
-        .I2(count[31]),
-        .I3(count[30]),
-        .I4(count[24]),
-        .I5(r_led_i_2_n_0),
+       (.I0(count[21]),
+        .I1(count[20]),
+        .I2(count[22]),
+        .I3(count[23]),
+        .I4(count[25]),
+        .I5(\count[31]_i_5_n_0 ),
         .O(p_0_in__0));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    r_led_i_2
-       (.I0(count[27]),
-        .I1(count[26]),
-        .I2(count[29]),
-        .I3(count[28]),
-        .O(r_led_i_2_n_0));
   (* KEEP = "yes" *) 
   FDCE r_led_reg
        (.C(sys_clk),

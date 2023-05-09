@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "led_top,Vivado 2022.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_led_top_0_1,led_top,{}" *)
-(* CORE_GENERATION_INFO = "design_1_led_top_0_1,led_top,{x_ipProduct=Vivado 2022.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=led_top,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DLY_CNT=0x02FAF080,HALF_DLY_CNT=0x00800000}" *)
+(* CORE_GENERATION_INFO = "design_1_led_top_0_1,led_top,{x_ipProduct=Vivado 2022.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=led_top,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DLY_CNT=0x02FAF080,HALF_DLY_CNT=0x00500000}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_led_top_0_1 (
@@ -61,7 +61,7 @@ module design_1_led_top_0_1 (
   led_1
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 99999985, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 sys_clk CLK" *)
 input wire sys_clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -71,7 +71,7 @@ output wire led_1;
 
   led_top #(
     .DLY_CNT(32'H02FAF080),
-    .HALF_DLY_CNT(32'H00800000)
+    .HALF_DLY_CNT(32'H00500000)
   ) inst (
     .sys_clk(sys_clk),
     .sys_rst_n(sys_rst_n),

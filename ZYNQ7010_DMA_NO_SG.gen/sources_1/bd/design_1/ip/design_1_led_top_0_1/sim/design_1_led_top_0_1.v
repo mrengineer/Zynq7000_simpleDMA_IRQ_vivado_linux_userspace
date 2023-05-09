@@ -60,7 +60,7 @@ module design_1_led_top_0_1 (
   led_1
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 99999985, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 sys_clk CLK" *)
 input wire sys_clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -70,7 +70,7 @@ output wire led_1;
 
   led_top #(
     .DLY_CNT(32'H02FAF080),
-    .HALF_DLY_CNT(32'H00800000)
+    .HALF_DLY_CNT(32'H00500000)
   ) inst (
     .sys_clk(sys_clk),
     .sys_rst_n(sys_rst_n),
