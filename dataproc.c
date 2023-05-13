@@ -16,7 +16,6 @@
 
 
 
-
 /* a=target variable, b=bit number to act upon 0-n */
 #define BIT_SET(a,b)		((a) |= (1ULL<<(b)))
 #define BIT_CLEAR(a,b)		((a) &= ~(1ULL<<(b)))
@@ -63,6 +62,10 @@
 #define ENABLE_DELAY_IRQ            0x00002000
 #define ENABLE_ERR_IRQ              0x00004000
 #define ENABLE_ALL_IRQ              0x00007000
+
+
+#define FROM_PL_WORDS				(64)
+#define FROM_PL_BYTES				FROM_PL_WORDS * 4			//BYTES (4 byte as it 32 bit)
 
 long long current_timestamp() {
     struct timeval te; 
@@ -226,7 +229,6 @@ void memdump(void* virtual_address, int byte_count) {
 
 void print_mem(void *virtual_address, int count)
 {
-	//char *data_ptr = virtual_address;
 	unsigned int *data_ptr = virtual_address;
 
 	for(int i = 0; i < count; i ++){
@@ -287,11 +289,14 @@ int main() {
 	printf("- Memory map the address of the DMA AXI IP via its AXI lite control interface register block.\n");
     unsigned int *dma_virtual_addr = mmap(NULL, 65535, PROT_READ | PROT_WRITE, MAP_SHARED, ddr_memory, 0x40400000);
 
+	//FROM PS to DDR to PL
 	printf("- Memory map the MM2S source address register block.\n");
     unsigned int *virtual_src_addr  = mmap(NULL, 65535, PROT_READ | PROT_WRITE, MAP_SHARED, ddr_memory, 0x0e000000);
 
 	printf("- Memory map the S2MM destination address register block.\n");
-    unsigned int *virtual_dst_addr = mmap(NULL, 65535, PROT_READ | PROT_WRITE, MAP_SHARED, ddr_memory, 0x0f000000);
+
+	//FROM PL to DDR to PS
+    unsigned int *virtual_dst_addr = mmap(NULL, FROM_PL_BYTES, PROT_READ | PROT_WRITE, MAP_SHARED, ddr_memory, 0x0f000000);
 
 	printf("- Writing random data to source register block...\n");
 	virtual_src_addr[0]= 0x0000000D;
@@ -309,15 +314,14 @@ int main() {
 
 	
 	printf("> Clearing the destination register block...\n");
-	memset(virtual_dst_addr, 0, 32);
+	memset(virtual_dst_addr, 0, FROM_PL_BYTES);
 
 
 			printf("> Source memory block data:      ");
-			print_mem(virtual_src_addr, 8);
+			print_mem(virtual_src_addr, FROM_PL_WORDS);
 
 			printf("> Destination memory block data: ");
-			print_mem(virtual_dst_addr, 8);
-
+			print_mem(virtual_dst_addr, FROM_PL_WORDS);
 
 
 		printf("> Reset the DMA.\n");
@@ -355,41 +359,48 @@ int main() {
 
 		printf("\n\n\n");
 
-//	while(1){
+	while(1){
 
-		printf("> Writing MM2S transfer length of 32 bytes...\n");
-		write_dma(dma_virtual_addr, MM2S_TRNSFR_LENGTH_REGISTER, 32);
+		//printf("> Writing MM2S transfer length of 32 bytes...\n");
+		write_dma(dma_virtual_addr, MM2S_TRNSFR_LENGTH_REGISTER, FROM_PL_BYTES);
 		dma_mm2s_status(dma_virtual_addr);
 
-		printf("> Writing S2MM transfer length of 32 bytes...\n");
-		write_dma(dma_virtual_addr, S2MM_BUFF_LENGTH_REGISTER, 32);
+		//printf("> Writing S2MM transfer length of 32 bytes...\n");
+		write_dma(dma_virtual_addr, S2MM_BUFF_LENGTH_REGISTER, FROM_PL_BYTES);
 		dma_s2mm_status(dma_virtual_addr);
-
-		printf("> Waiting for MM2S synchronization...\n");
+		
+		///printf("> Waiting for MM2S synchronization...\n");
 		dma_mm2s_sync(dma_virtual_addr);
 
-		printf("> Waiting for S2MM sychronization...\n");
+
+		//printf("> Waiting for S2MM sychronization...\n");
 		dma_s2mm_sync(dma_virtual_addr);
 
-		dma_s2mm_status(dma_virtual_addr);		
 		dma_mm2s_status(dma_virtual_addr);
+		dma_s2mm_status(dma_virtual_addr);		
+	
+		//printf("SRC DATA RD: %02x%02x%02x%02x %02x%02x%02x%02x\r\n", 	virtual_src_addr[0], virtual_src_addr[1], virtual_src_addr[2], virtual_src_addr[3],
+		//																virtual_src_addr[4], virtual_src_addr[5], virtual_src_addr[6], virtual_src_addr[7]);
+		//printf("DEST RESULT 1: %02x%02x%02x%02x %02x%02x%02x%02x\r\n", 	virtual_dst_addr[0], virtual_dst_addr[1], virtual_dst_addr[2], virtual_dst_addr[3],
+		//																virtual_dst_addr[4], virtual_dst_addr[5], virtual_dst_addr[6], virtual_dst_addr[7]);
+		//printf("DEST RESULT 2: %02x%02x%02x%02x %02x%02x%02x%02x\r\n", 	virtual_dst_addr[8], virtual_dst_addr[9], virtual_dst_addr[10], virtual_dst_addr[11],
+		//																virtual_dst_addr[12], virtual_dst_addr[13], virtual_dst_addr[14], virtual_dst_addr[15]);
 
+			printf("> Dest data: ");
+			print_mem(virtual_dst_addr, FROM_PL_WORDS);
 
+//		fflush(stdin);
+		delay(50);
+	}
 
-		delay(1);
-
-		printf("SRC DATA RD: %02x%02x%02x%02x %02x%02x%02x%02x\r\n", 	virtual_src_addr[0], virtual_src_addr[1], virtual_src_addr[2], virtual_src_addr[3],
-																		virtual_src_addr[4], virtual_src_addr[5], virtual_src_addr[6], virtual_src_addr[7]);
-
-		printf("DEST RESULT: %02x%02x%02x%02x %02x%02x%02x%02x\r\n", 	virtual_dst_addr[0], virtual_dst_addr[1], virtual_dst_addr[2], virtual_dst_addr[3],
-																		virtual_dst_addr[4], virtual_dst_addr[5], virtual_dst_addr[6], virtual_dst_addr[7]);
 
 
 
 	munmap(dma_virtual_addr, 65535);
 	munmap(virtual_src_addr, 65535);
-	munmap(virtual_dst_addr, 65535);
+	munmap(virtual_dst_addr, FROM_PL_BYTES);
 
 	close(ddr_memory);
     return 0;
 }
+
