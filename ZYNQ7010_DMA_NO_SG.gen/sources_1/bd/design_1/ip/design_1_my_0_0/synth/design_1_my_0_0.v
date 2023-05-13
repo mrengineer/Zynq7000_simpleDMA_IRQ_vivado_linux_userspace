@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "my,Vivado 2022.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_my_0_0,my,{}" *)
-(* CORE_GENERATION_INFO = "design_1_my_0_0,my,{x_ipProduct=Vivado 2022.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=my,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "design_1_my_0_0,my,{x_ipProduct=Vivado 2022.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=my,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,BUFF_VALUES_LEN=64}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_my_0_0 (
@@ -69,10 +69,7 @@ module design_1_my_0_0 (
   m_axis_tready,
   m_axis_tdata,
   m_axis_tkeep,
-  m_axis_tlast,
-  d_last,
-  d_cnt,
-  d_valid
+  m_axis_tlast
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 99999985, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
@@ -109,11 +106,10 @@ output wire [3 : 0] m_axis_tkeep;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 99999985, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TLAST" *)
 output wire m_axis_tlast;
-output wire d_last;
-output wire [3 : 0] d_cnt;
-output wire d_valid;
 
-  my inst (
+  my #(
+    .BUFF_VALUES_LEN(64)
+  ) inst (
     .sys_clk(sys_clk),
     .sys_rst_n(sys_rst_n),
     .s_axis_aclk(s_axis_aclk),
@@ -127,9 +123,6 @@ output wire d_valid;
     .m_axis_tready(m_axis_tready),
     .m_axis_tdata(m_axis_tdata),
     .m_axis_tkeep(m_axis_tkeep),
-    .m_axis_tlast(m_axis_tlast),
-    .d_last(d_last),
-    .d_cnt(d_cnt),
-    .d_valid(d_valid)
+    .m_axis_tlast(m_axis_tlast)
   );
 endmodule

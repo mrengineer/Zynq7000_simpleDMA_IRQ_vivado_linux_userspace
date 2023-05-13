@@ -66,9 +66,9 @@ design_1_auto_us_0_sc::design_1_auto_us_0_sc(const sc_core::sc_module_name& nm) 
     model_param_props.addLong("C_SUPPORTS_ID", "0");
     model_param_props.addLong("C_AXI_ADDR_WIDTH", "32");
     model_param_props.addLong("C_S_AXI_DATA_WIDTH", "32");
-    model_param_props.addLong("C_M_AXI_DATA_WIDTH", "64");
-    model_param_props.addLong("C_AXI_SUPPORTS_WRITE", "0");
-    model_param_props.addLong("C_AXI_SUPPORTS_READ", "1");
+    model_param_props.addLong("C_M_AXI_DATA_WIDTH", "128");
+    model_param_props.addLong("C_AXI_SUPPORTS_WRITE", "1");
+    model_param_props.addLong("C_AXI_SUPPORTS_READ", "0");
     model_param_props.addLong("C_FIFO_MODE", "0");
     model_param_props.addLong("C_S_AXI_ACLK_RATIO", "1");
     model_param_props.addLong("C_M_AXI_ACLK_RATIO", "2");
