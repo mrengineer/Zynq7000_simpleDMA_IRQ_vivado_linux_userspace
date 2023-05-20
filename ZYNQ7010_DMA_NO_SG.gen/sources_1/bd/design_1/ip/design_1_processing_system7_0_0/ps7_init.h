@@ -88,7 +88,7 @@ extern unsigned long  * ps7_peripherals_init_data;
 #define CAN_FREQ  10000000
 #define PCAP_FREQ  199999969
 #define TPIU_FREQ  200000000
-#define FPGA0_FREQ  99999985
+#define FPGA0_FREQ  199999969
 #define FPGA1_FREQ  10000000
 #define FPGA2_FREQ  10000000
 #define FPGA3_FREQ  10000000

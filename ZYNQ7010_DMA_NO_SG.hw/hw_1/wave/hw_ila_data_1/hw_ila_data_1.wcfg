@@ -10,11 +10,11 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="129"></ZoomEndTime>
+      <ZoomEndTime time="8,193"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="290"></NameColumnWidth>
+      <NameColumnWidth column_width="220"></NameColumnWidth>
       <ValueColumnWidth column_width="79"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="6" />
@@ -24,7 +24,7 @@
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tlast</obj_property>
       <obj_property name="ObjectShortName">net_slot_0_axis_tlast</obj_property>
-      <obj_property name="label">slot_0 : my_0_m_axis : TLAST</obj_property>
+      <obj_property name="label">slot_0 : my_0_m_axis1 : TLAST</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -33,7 +33,7 @@
       <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tdata[31:0]</obj_property>
       <obj_property name="ObjectShortName">net_slot_0_axis_tdata[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="label">slot_0 : my_0_m_axis : TDATA</obj_property>
+      <obj_property name="label">slot_0 : my_0_m_axis1 : TDATA</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -42,7 +42,7 @@
       <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tkeep[3:0]</obj_property>
       <obj_property name="ObjectShortName">net_slot_0_axis_tkeep[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="label">slot_0 : my_0_m_axis : TKEEP</obj_property>
+      <obj_property name="label">slot_0 : my_0_m_axis1 : TKEEP</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -50,7 +50,7 @@
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tready</obj_property>
       <obj_property name="ObjectShortName">net_slot_0_axis_tready</obj_property>
-      <obj_property name="label">slot_0 : my_0_m_axis : TREADY</obj_property>
+      <obj_property name="label">slot_0 : my_0_m_axis1 : TREADY</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -58,24 +58,24 @@
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tvalid</obj_property>
       <obj_property name="ObjectShortName">net_slot_0_axis_tvalid</obj_property>
-      <obj_property name="label">slot_0 : my_0_m_axis : TVALID</obj_property>
+      <obj_property name="label">slot_0 : my_0_m_axis1 : TVALID</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="group" fp_name="group194">
-      <obj_property name="label">slot_0 : my_0_m_axis : Interface</obj_property>
+   <wvobject type="group" fp_name="group34">
+      <obj_property name="label">slot_0 : my_0_m_axis1 : Interface</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="Detail_Data">Interface_(i1:s0)_(my_0_m_axis)_tooltip</obj_property>
-      <obj_property name="Render_Data">Interface_(i1:s0)_(my_0_m_axis)</obj_property>
+      <obj_property name="Detail_Data">Interface_(i1:s0)_(my_0_m_axis1)_tooltip</obj_property>
+      <obj_property name="Render_Data">Interface_(i1:s0)_(my_0_m_axis1)</obj_property>
       <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
       <obj_property name="CustomSignalColor">OliveDrab</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-      <wvobject type="group" fp_name="group195">
-         <obj_property name="label">slot_0 : my_0_m_axis : T Channel</obj_property>
+      <wvobject type="group" fp_name="group35">
+         <obj_property name="label">slot_0 : my_0_m_axis1 : T Channel</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="Detail_Data">T_Channel_(i1:s0)_(my_0_m_axis)_tooltip</obj_property>
-         <obj_property name="Render_Data">T_Channel_(i1:s0)_(my_0_m_axis)</obj_property>
+         <obj_property name="Detail_Data">T_Channel_(i1:s0)_(my_0_m_axis1)_tooltip</obj_property>
+         <obj_property name="Render_Data">T_Channel_(i1:s0)_(my_0_m_axis1)</obj_property>
          <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
          <obj_property name="CustomSignalColor">Purple</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
@@ -84,7 +84,7 @@
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tvalid</obj_property>
             <obj_property name="ObjectShortName">net_slot_0_axis_tvalid</obj_property>
-            <obj_property name="label">slot_0 : my_0_m_axis : TVALID</obj_property>
+            <obj_property name="label">slot_0 : my_0_m_axis1 : TVALID</obj_property>
             <obj_property name="LABELRADIX">true</obj_property>
             <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
          </wvobject>
@@ -92,7 +92,7 @@
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tready</obj_property>
             <obj_property name="ObjectShortName">net_slot_0_axis_tready</obj_property>
-            <obj_property name="label">slot_0 : my_0_m_axis : TREADY</obj_property>
+            <obj_property name="label">slot_0 : my_0_m_axis1 : TREADY</obj_property>
             <obj_property name="LABELRADIX">true</obj_property>
             <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
          </wvobject>
@@ -100,7 +100,7 @@
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tlast</obj_property>
             <obj_property name="ObjectShortName">net_slot_0_axis_tlast</obj_property>
-            <obj_property name="label">slot_0 : my_0_m_axis : TLAST</obj_property>
+            <obj_property name="label">slot_0 : my_0_m_axis1 : TLAST</obj_property>
             <obj_property name="LABELRADIX">true</obj_property>
             <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
          </wvobject>
@@ -108,7 +108,7 @@
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tdata[31:0]</obj_property>
             <obj_property name="ObjectShortName">net_slot_0_axis_tdata[31:0]</obj_property>
-            <obj_property name="label">slot_0 : my_0_m_axis : TDATA</obj_property>
+            <obj_property name="label">slot_0 : my_0_m_axis1 : TDATA</obj_property>
             <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
             <obj_property name="LABELRADIX">true</obj_property>
             <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
@@ -117,7 +117,7 @@
             <obj_property name="DisplayName">label</obj_property>
             <obj_property name="ElementShortName">design_1_i/system_ila_0/inst/net_slot_0_axis_tkeep[3:0]</obj_property>
             <obj_property name="ObjectShortName">net_slot_0_axis_tkeep[3:0]</obj_property>
-            <obj_property name="label">slot_0 : my_0_m_axis : TKEEP</obj_property>
+            <obj_property name="label">slot_0 : my_0_m_axis1 : TKEEP</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
             <obj_property name="LABELRADIX">true</obj_property>
             <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>

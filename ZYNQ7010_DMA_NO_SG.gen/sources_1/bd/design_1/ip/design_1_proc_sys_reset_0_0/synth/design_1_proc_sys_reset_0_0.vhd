@@ -123,7 +123,7 @@ ARCHITECTURE design_1_proc_sys_reset_0_0_arch OF design_1_proc_sys_reset_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF peripheral_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 peripheral_low_rst RST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF peripheral_reset: SIGNAL IS "XIL_INTERFACENAME peripheral_high_rst, POLARITY ACTIVE_HIGH, TYPE PERIPHERAL, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF peripheral_reset: SIGNAL IS "xilinx.com:signal:reset:1.0 peripheral_high_rst RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF slowest_sync_clk: SIGNAL IS "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 99999985, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF slowest_sync_clk: SIGNAL IS "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 2e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF slowest_sync_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clock CLK";
 BEGIN
   U0 : proc_sys_reset

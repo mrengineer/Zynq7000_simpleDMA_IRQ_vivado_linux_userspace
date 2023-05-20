@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xA8FD5AB938DADBAA",
+      "boundary_crc": "0xA8FD5AB99EAF166E",
       "design_src": "SBD",
       "device": "xc7z010clg400-1",
       "name": "bd_36cd",
@@ -26,7 +26,7 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "99999985",
+            "value": "2e+08",
             "value_src": "default"
           },
           "HAS_TKEEP": {
@@ -92,7 +92,7 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "99999985",
+            "value": "2e+08",
             "value_src": "default_prop"
           },
           "FREQ_TOLERANCE_HZ": {
@@ -150,7 +150,7 @@
             "value": "0"
           },
           "C_ILA_CLK_FREQ": {
-            "value": "99999985"
+            "value": "200000000"
           },
           "C_INPUT_PIPE_STAGES": {
             "value": "0"

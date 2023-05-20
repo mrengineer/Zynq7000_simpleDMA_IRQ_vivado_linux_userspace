@@ -65,7 +65,7 @@ design_1_xbar_0_sc::design_1_xbar_0_sc(const sc_core::sc_module_name& nm) : sc_c
     model_param_props.addLong("C_NUM_MASTER_SLOTS", "1");
     model_param_props.addLong("C_AXI_ID_WIDTH", "1");
     model_param_props.addLong("C_AXI_ADDR_WIDTH", "32");
-    model_param_props.addLong("C_AXI_DATA_WIDTH", "128");
+    model_param_props.addLong("C_AXI_DATA_WIDTH", "256");
     model_param_props.addLong("C_AXI_PROTOCOL", "0");
     model_param_props.addLong("C_NUM_ADDR_RANGES", "1");
     model_param_props.addLong("C_AXI_SUPPORTS_USER_SIGNALS", "0");

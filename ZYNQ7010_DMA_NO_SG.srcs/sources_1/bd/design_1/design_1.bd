@@ -12,27 +12,27 @@
     },
     "design_tree": {
       "PSys": "",
-      "led_top_0": "",
       "axi_dma_0": "",
       "axi_mem_intercon": {
         "xbar": "",
         "s00_couplers": {},
-        "s01_couplers": {
-          "auto_us": ""
-        },
+        "s01_couplers": {},
         "m00_couplers": {
           "auto_ds": "",
           "auto_pc": ""
         }
       },
       "axi_mem_intercon1": {
-        "s00_couplers": {}
+        "s00_couplers": {
+          "auto_pc": ""
+        }
       },
-      "axi_protocol_convert_0": "",
       "proc_sys_reset_0": "",
       "invert": "",
       "xlconcat_0": "",
       "system_ila_0": "",
+      "led_top_0": "",
+      "axis_data_fifo_0": "",
       "my_0": ""
     },
     "interface_ports": {
@@ -131,7 +131,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "99.999985"
+            "value": "199.999969"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -185,7 +185,7 @@
             "value": "111.111107"
           },
           "PCW_CLK0_FREQ": {
-            "value": "99999985"
+            "value": "199999969"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -263,7 +263,7 @@
             "value": "ARM PLL"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "100"
+            "value": "200"
           },
           "PCW_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "150"
@@ -700,70 +700,26 @@
           }
         }
       },
-      "led_top_0": {
-        "vlnv": "xilinx.com:module_ref:led_top:1.0",
-        "xci_name": "design_1_led_top_0_1",
-        "xci_path": "ip/design_1_led_top_0_1/design_1_led_top_0_1.xci",
-        "inst_hier_path": "led_top_0",
-        "parameters": {
-          "HALF_DLY_CNT": {
-            "value": "0x00500000"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "led_top",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "sys_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "sys_rst_n",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "99999985",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "sys_rst_n": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "led_1": {
-            "direction": "O"
-          }
-        }
-      },
       "axi_dma_0": {
         "vlnv": "xilinx.com:ip:axi_dma:7.1",
         "xci_name": "design_1_axi_dma_0_1",
         "xci_path": "ip/design_1_axi_dma_0_1/design_1_axi_dma_0_1.xci",
         "inst_hier_path": "axi_dma_0",
         "parameters": {
+          "c_include_mm2s_dre": {
+            "value": "0"
+          },
+          "c_include_s2mm_dre": {
+            "value": "0"
+          },
           "c_include_sg": {
             "value": "0"
           },
           "c_m_axi_mm2s_data_width": {
-            "value": "128"
+            "value": "256"
+          },
+          "c_m_axi_s2mm_data_width": {
+            "value": "256"
           },
           "c_m_axis_mm2s_tdata_width": {
             "value": "32"
@@ -1046,56 +1002,11 @@
                 "direction": "I"
               }
             },
-            "components": {
-              "auto_us": {
-                "vlnv": "xilinx.com:ip:axi_dwidth_converter:2.1",
-                "xci_name": "design_1_auto_us_0",
-                "xci_path": "ip/design_1_auto_us_0/design_1_auto_us_0.xci",
-                "inst_hier_path": "axi_mem_intercon/s01_couplers/auto_us",
-                "parameters": {
-                  "MI_DATA_WIDTH": {
-                    "value": "128"
-                  },
-                  "SI_DATA_WIDTH": {
-                    "value": "32"
-                  }
-                },
-                "interface_ports": {
-                  "S_AXI": {
-                    "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-                    "mode": "Slave",
-                    "bridges": [
-                      "M_AXI"
-                    ]
-                  }
-                }
-              }
-            },
             "interface_nets": {
-              "auto_us_to_s01_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_us/M_AXI"
-                ]
-              },
-              "s01_couplers_to_auto_us": {
+              "s01_couplers_to_s01_couplers": {
                 "interface_ports": [
                   "S_AXI",
-                  "auto_us/S_AXI"
-                ]
-              }
-            },
-            "nets": {
-              "S_ACLK_1": {
-                "ports": [
-                  "S_ACLK",
-                  "auto_us/s_axi_aclk"
-                ]
-              },
-              "S_ARESETN_1": {
-                "ports": [
-                  "S_ARESETN",
-                  "auto_us/s_axi_aresetn"
+                  "M_AXI"
                 ]
               }
             }
@@ -1161,7 +1072,7 @@
                     "value": "64"
                   },
                   "SI_DATA_WIDTH": {
-                    "value": "128"
+                    "value": "256"
                   }
                 },
                 "interface_ports": {
@@ -1451,11 +1362,56 @@
                 "direction": "I"
               }
             },
+            "components": {
+              "auto_pc": {
+                "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
+                "xci_name": "design_1_auto_pc_1",
+                "xci_path": "ip/design_1_auto_pc_1/design_1_auto_pc_1.xci",
+                "inst_hier_path": "axi_mem_intercon1/s00_couplers/auto_pc",
+                "parameters": {
+                  "MI_PROTOCOL": {
+                    "value": "AXI4LITE"
+                  },
+                  "SI_PROTOCOL": {
+                    "value": "AXI3"
+                  }
+                },
+                "interface_ports": {
+                  "S_AXI": {
+                    "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+                    "mode": "Slave",
+                    "bridges": [
+                      "M_AXI"
+                    ]
+                  }
+                }
+              }
+            },
             "interface_nets": {
-              "s00_couplers_to_s00_couplers": {
+              "auto_pc_to_s00_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
-                  "M_AXI"
+                  "auto_pc/S_AXI"
+                ]
+              }
+            },
+            "nets": {
+              "S_ACLK_1": {
+                "ports": [
+                  "S_ACLK",
+                  "auto_pc/aclk"
+                ]
+              },
+              "S_ARESETN_1": {
+                "ports": [
+                  "S_ARESETN",
+                  "auto_pc/aresetn"
                 ]
               }
             }
@@ -1498,21 +1454,6 @@
             "ports": [
               "M00_ARESETN",
               "s00_couplers/M_ARESETN"
-            ]
-          }
-        }
-      },
-      "axi_protocol_convert_0": {
-        "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-        "xci_name": "design_1_axi_protocol_convert_0_0",
-        "xci_path": "ip/design_1_axi_protocol_convert_0_0/design_1_axi_protocol_convert_0_0.xci",
-        "inst_hier_path": "axi_protocol_convert_0",
-        "interface_ports": {
-          "S_AXI": {
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-            "mode": "Slave",
-            "bridges": [
-              "M_AXI"
             ]
           }
         }
@@ -1570,11 +1511,80 @@
           }
         }
       },
+      "led_top_0": {
+        "vlnv": "xilinx.com:module_ref:led_top:1.0",
+        "xci_name": "design_1_led_top_0_1",
+        "xci_path": "ip/design_1_led_top_0_1/design_1_led_top_0_1.xci",
+        "inst_hier_path": "led_top_0",
+        "parameters": {
+          "HALF_DLY_CNT": {
+            "value": "0x00500000"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "led_top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sys_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "sys_rst_n",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "2e+08",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "sys_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "led_1": {
+            "direction": "O"
+          }
+        }
+      },
+      "axis_data_fifo_0": {
+        "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+        "xci_name": "design_1_axis_data_fifo_0_0",
+        "xci_path": "ip/design_1_axis_data_fifo_0_0/design_1_axis_data_fifo_0_0.xci",
+        "inst_hier_path": "axis_data_fifo_0",
+        "parameters": {
+          "FIFO_DEPTH": {
+            "value": "16384"
+          }
+        }
+      },
       "my_0": {
         "vlnv": "xilinx.com:module_ref:my:1.0",
         "xci_name": "design_1_my_0_0",
         "xci_path": "ip/design_1_my_0_0/design_1_my_0_0.xci",
         "inst_hier_path": "my_0",
+        "parameters": {
+          "BUFF_VALUES_LEN": {
+            "value": "30000"
+          }
+        },
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "my",
@@ -1619,7 +1629,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "99999985",
+                "value": "2e+08",
                 "value_src": "user_prop"
               },
               "PHASE": {
@@ -1696,7 +1706,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "99999985",
+                "value": "2e+08",
                 "value_src": "user_prop"
               },
               "PHASE": {
@@ -1746,7 +1756,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "99999985",
+                "value": "2e+08",
                 "value_src": "user_prop"
               },
               "PHASE": {
@@ -1778,7 +1788,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "99999985",
+                "value": "2e+08",
                 "value_src": "user_prop"
               },
               "PHASE": {
@@ -1800,7 +1810,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "99999985",
+                "value": "2e+08",
                 "value_src": "user_prop"
               },
               "PHASE": {
@@ -1819,8 +1829,8 @@
     "interface_nets": {
       "PSys_M_AXI_GP0": {
         "interface_ports": [
-          "axi_protocol_convert_0/S_AXI",
-          "PSys/M_AXI_GP0"
+          "PSys/M_AXI_GP0",
+          "axi_mem_intercon1/S00_AXI"
         ]
       },
       "axi_dma_0_M_AXIS_MM2S": {
@@ -1853,16 +1863,16 @@
           "PSys/S_AXI_HP0"
         ]
       },
-      "axi_protocol_convert_0_M_AXI": {
-        "interface_ports": [
-          "axi_protocol_convert_0/M_AXI",
-          "axi_mem_intercon1/S00_AXI"
-        ]
-      },
       "my_0_m_axis": {
         "interface_ports": [
           "axi_dma_0/S_AXIS_S2MM",
+          "axis_data_fifo_0/M_AXIS"
+        ]
+      },
+      "my_0_m_axis1": {
+        "interface_ports": [
           "my_0/m_axis",
+          "axis_data_fifo_0/S_AXIS",
           "system_ila_0/SLOT_0_AXIS"
         ]
       },
@@ -1903,6 +1913,7 @@
           "invert/Res",
           "axi_dma_0/axi_resetn",
           "system_ila_0/resetn",
+          "axis_data_fifo_0/s_axis_aresetn",
           "my_0/sys_rst_n"
         ]
       },
@@ -1922,13 +1933,12 @@
       "proc_sys_reset_0_peripheral_aresetn": {
         "ports": [
           "proc_sys_reset_0/peripheral_aresetn",
-          "led_top_0/sys_rst_n",
-          "axi_protocol_convert_0/aresetn",
           "axi_mem_intercon/M00_ARESETN",
           "axi_mem_intercon/S01_ARESETN",
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon1/S00_ARESETN",
-          "axi_mem_intercon1/M00_ARESETN"
+          "axi_mem_intercon1/M00_ARESETN",
+          "led_top_0/sys_rst_n"
         ]
       },
       "proc_sys_reset_0_peripheral_reset": {
@@ -1945,7 +1955,6 @@
           "axi_mem_intercon1/ACLK",
           "axi_mem_intercon1/S00_ACLK",
           "axi_mem_intercon1/M00_ACLK",
-          "axi_protocol_convert_0/aclk",
           "PSys/S_AXI_HP0_ACLK",
           "axi_dma_0/m_axi_mm2s_aclk",
           "axi_dma_0/m_axi_s2mm_aclk",
@@ -1953,9 +1962,10 @@
           "axi_mem_intercon/S00_ACLK",
           "axi_mem_intercon/M00_ACLK",
           "axi_mem_intercon/S01_ACLK",
-          "led_top_0/sys_clk",
           "proc_sys_reset_0/slowest_sync_clk",
           "system_ila_0/clk",
+          "led_top_0/sys_clk",
+          "axis_data_fifo_0/s_axis_aclk",
           "my_0/sys_clk",
           "my_0/s_axis_aclk",
           "my_0/m_axis_aclk"

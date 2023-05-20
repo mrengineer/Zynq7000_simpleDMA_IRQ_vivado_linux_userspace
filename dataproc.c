@@ -64,7 +64,7 @@
 #define ENABLE_ALL_IRQ              0x00007000
 
 
-#define FROM_PL_WORDS				(64)
+#define FROM_PL_WORDS				(30000)
 #define FROM_PL_BYTES				FROM_PL_WORDS * 4			//BYTES (4 byte as it 32 bit)
 
 long long current_timestamp() {
@@ -227,23 +227,51 @@ void memdump(void* virtual_address, int byte_count) {
     printf("\n");
 }
 
-void print_mem(void *virtual_address, int count)
+void print_mem(void *virtual_address, unsigned int count)
 {
 	unsigned int *data_ptr = virtual_address;
+	unsigned int misscounts = 0;
 
-	for(int i = 0; i < count; i ++){
-		//printf("%02X ", data_ptr[i]);
-		//printf("%ld", data_ptr[i]);
+		for(unsigned int i = 1; i < count; i ++){
+			//printf("%02X ", data_ptr[i]);
+			//printf("%ld", data_ptr[i]);
 
-		// print a space every 4 bytes (0 indexed)
-		//if(i%4==3){
-		//	printf(" | ");
-		//}
+			// print a space every 4 bytes (0 indexed)
+			//if(i%4==3){
+			//	printf(" | ");
+			//}
 
-		printf("%i ", data_ptr[i]);
-		
-	}
+			if (abs(data_ptr[i] - data_ptr[i-1]) > 1 && abs(data_ptr[i] - data_ptr[i-1]) < 5000) {
+				misscounts++;
+			}
 
+			
+		}
+
+		printf(" Misscounts=%u ... DONE", misscounts);
+
+/*
+	if (count  < 33) {
+
+		for(int i = 0; i < count; i ++){
+			//printf("%02X ", data_ptr[i]);
+			//printf("%ld", data_ptr[i]);
+
+			// print a space every 4 bytes (0 indexed)
+			//if(i%4==3){
+			//	printf(" | ");
+			//}
+			printf("%i ", data_ptr[i]);		
+		}
+	} else {
+		for(int i = 0; i < 10; i ++){
+			printf("%i ", data_ptr[i]);		
+		}
+		printf("... ");
+		for(int i = count - 10; i < count; i ++){
+			printf("%i ", data_ptr[i]);		
+		}	
+	}*/
 	printf("\n");
 }
 
@@ -310,7 +338,7 @@ int main() {
 	virtual_src_addr[7]= 0x0000000F;
 
 	unsigned long long i=0;
-	long long  start = current_timestamp();
+	
 
 	
 	printf("> Clearing the destination register block...\n");
@@ -359,8 +387,11 @@ int main() {
 
 		printf("\n\n\n");
 
-	while(1){
+	//while(1){
 
+	long long  start = current_timestamp();
+
+	for(int x=1; x<=100; x++){
 		//printf("> Writing MM2S transfer length of 32 bytes...\n");
 		write_dma(dma_virtual_addr, MM2S_TRNSFR_LENGTH_REGISTER, FROM_PL_BYTES);
 		dma_mm2s_status(dma_virtual_addr);
@@ -386,14 +417,19 @@ int main() {
 		//printf("DEST RESULT 2: %02x%02x%02x%02x %02x%02x%02x%02x\r\n", 	virtual_dst_addr[8], virtual_dst_addr[9], virtual_dst_addr[10], virtual_dst_addr[11],
 		//																virtual_dst_addr[12], virtual_dst_addr[13], virtual_dst_addr[14], virtual_dst_addr[15]);
 
-			printf("> Dest data: ");
+			printf("%i > Dest data: ", x);
 			print_mem(virtual_dst_addr, FROM_PL_WORDS);
 
 //		fflush(stdin);
-		delay(50);
 	}
 
+	printf("time %llu millisec\r\n", current_timestamp() - start);
 
+	unsigned int t = 0;
+	t = t - 1;
+	printf("UINT-1 %u \r\n", t);
+	
+	//}
 
 
 	munmap(dma_virtual_addr, 65535);

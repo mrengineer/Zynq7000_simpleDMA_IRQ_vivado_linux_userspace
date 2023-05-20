@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
--- Date        : Thu May  4 22:49:49 2023
+-- Date        : Wed May 17 22:45:13 2023
 -- Host        : pc running 64-bit Ubuntu 20.04.6 LTS
--- Command     : write_vhdl -force -mode funcsim -rename_top design_1_led_top_0_1 -prefix
---               design_1_led_top_0_1_ design_1_led_top_0_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/bulkin/FPGA/TheDevice/ZYNQ7010_DMA_NO_SG.gen/sources_1/bd/design_1/ip/design_1_led_top_0_1/design_1_led_top_0_1_sim_netlist.vhdl
 -- Design      : design_1_led_top_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -24,6 +24,8 @@ entity design_1_led_top_0_1_led_top is
   attribute DLY_CNT of design_1_led_top_0_1_led_top : entity is 50000000;
   attribute HALF_DLY_CNT : integer;
   attribute HALF_DLY_CNT of design_1_led_top_0_1_led_top : entity is 5242880;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_led_top_0_1_led_top : entity is "led_top";
   attribute keep_hierarchy : string;
   attribute keep_hierarchy of design_1_led_top_0_1_led_top : entity is "soft";
 end design_1_led_top_0_1_led_top;
@@ -1044,7 +1046,7 @@ architecture STRUCTURE of design_1_led_top_0_1 is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of sys_clk : signal is "xilinx.com:signal:clock:1.0 sys_clk CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of sys_clk : signal is "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 99999985, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0";
+  attribute X_INTERFACE_PARAMETER of sys_clk : signal is "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_rst_n, FREQ_HZ 249999969, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of sys_rst_n : signal is "xilinx.com:signal:reset:1.0 sys_rst_n RST";
   attribute X_INTERFACE_PARAMETER of sys_rst_n : signal is "XIL_INTERFACENAME sys_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
 begin
